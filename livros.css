@@ -1,0 +1,286 @@
+/* ---- IMPORTAÇÃO DAS FONTES (Estilo Personalizado) ---- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap');
+
+/* ---- VARIÁVEIS DE CORES E FONTES GLOBAIS (Tema "Céu Azul"!) ---- */
+:root {
+    /* Sua nova paleta de cores aplicada: */
+    --cor-fundo: #a9d6e5;            /* Seu azul bem claro para o fundo do site */
+    --cor-primaria: #89c2d9;         /* Seu azul mais forte para títulos e detalhes */
+    --cor-secundaria: #1282a2;       /* Cerulean - Mantido para botões, pois tem ótimo contraste */
+    --cor-texto: #0a1128;            /* Oxford Blue - Texto escuro para leitura perfeita */
+    --cor-branca: #fefcfb;           /* White - Para o fundo de cards e seções */
+
+    /* Cor especial para o título principal (logo) */
+    --cor-titulo-principal: #001f54; /* Penn Blue - Mantido um azul escuro para o logo */
+
+    /* Suas fontes escolhidas (mantidas): */
+    --fonte-titulos: 'Poppins', sans-serif;
+    --fonte-corpo: 'Nunito Sans', sans-serif;
+}
+
+/* ---- RESET E ESTILOS GERAIS ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto); /* Texto principal agora é azul escuro */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-primaria); /* Cor dos títulos (h2, h3) */
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: var(--cor-texto); /* Títulos dos cards em azul escuro */
+}
+
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* ---- CABEÇALHO E NAVEGAÇÃO (COM O NOVO BANNER!) ---- */
+header {
+    /* Aplicando sua nova imagem de fundo */
+    background-image: url('CLUBE DOS LIVROS/IMAGENS/LOGO\ 1.0.png');
+    background-size: cover; /* Garante que a imagem cubra todo o espaço */
+    background-position: center; /* Centraliza a imagem */
+    padding: 0; /* Removemos o padding para a imagem preencher tudo */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 100px; /* Definindo uma altura fixa para o banner */
+}
+
+header .container {
+    display: flex;
+    justify-content: flex-end; /* Joga os links do menu para a DIREITA */
+    align-items: center;
+    height: 100%; /* Garante que o container ocupe toda a altura do header */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3E2723; /* Um marrom escuro para combinar com o banner */
+    font-weight: 600;
+    font-size: 1.1em; /* Aumentei um pouco a fonte para ler melhor */
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-secundaria); /* Mantém o azul cerúleo ao passar o mouse */
+}
+
+
+/* ---- BOTÃO DE CHAMADA (CTA) ---- */
+.cta-button, .cta-button-nav {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca); /* Texto do botão branco para ler no fundo azul */
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover, .cta-button-nav:hover {
+    background-color: #0e6a87; /* Tom mais escuro do azul para o hover */
+}
+
+.cta-button-nav {
+    padding: 8px 15px;
+}
+
+/* ---- SEÇÃO HERO (LIVRO DO MÊS) ---- */
+.hero {
+    background-color: var(--cor-branca); /* Fundo da seção principal branco */
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 60%;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+    color: var(--cor-texto); /* Título do livro em azul escuro */
+}
+
+.hero-image img {
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra cinza sutil */
+}
+
+/* ---- SEÇÃO LIVROS ANTERIORES ---- */
+.galeria-livros {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap; 
+}
+
+.card-livro {
+    background-color: var(--cor-branca);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra cinza */
+    width: 220px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-livro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(137, 194, 217, 0.6); /* Sombra no seu tom de azul */
+}
+
+.card-livro img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* ---- NOVA SEÇÃO: VOTAÇÃO ---- */
+#votacao {
+    background-color: transparent; /* Fundo transparente para mesclar com o body */
+}
+
+.subtitulo {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1em;
+}
+
+.galeria-votacao {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card-votacao {
+    background-color: var(--cor-branca);
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    border: 1px solid var(--cor-primaria);
+    transition: all 0.3s ease-in-out;
+}
+
+.card-votacao:hover {
+    transform: scale(1.05);
+    border-color: var(--cor-secundaria);
+}
+
+.vote-button {
+    background-color: transparent;
+    color: var(--cor-secundaria);
+    border: 2px solid var(--cor-secundaria);
+}
+
+.vote-button:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+}
+
+/* ---- RODAPÉ ---- */
+footer {
+    background-color: var(--cor-primaria); /* Rodapé com o seu azul mais forte */
+    color: var(--cor-branca);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* ---- ESTILOS DO POP-UP (MODAL) ---- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 17, 40, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.modal-show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--cor-branca);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--cor-texto);
+}
+
+.modal-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-form input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--fonte-corpo);
+    font-size: 1em;
+}
+
+.modal-form button {
+    border: none;
+    cursor: pointer;
+}
