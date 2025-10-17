@@ -1,24 +1,15 @@
-/* ---- IMPORTAÇÃO DAS FONTES (Estilo Personalizado) ---- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap');
-
-/* ---- VARIÁVEIS DE CORES E FONTES GLOBAIS (Tema "Céu Azul"!) ---- */
+/* ============================================= */
+/* ESTILOS GERAIS E RESET BÁSICO                 */
+/* ============================================= */
 :root {
-    /* Sua nova paleta de cores aplicada: */
-    --cor-fundo: #a9d6e5;            /* Seu azul bem claro para o fundo do site */
-    --cor-primaria: #89c2d9;         /* Seu azul mais forte para títulos e detalhes */
-    --cor-secundaria: #1282a2;       /* Cerulean - Mantido para botões, pois tem ótimo contraste */
-    --cor-texto: #0a1128;            /* Oxford Blue - Texto escuro para leitura perfeita */
-    --cor-branca: #fefcfb;           /* White - Para o fundo de cards e seções */
-
-    /* Cor especial para o título principal (logo) */
-    --cor-titulo-principal: #001f54; /* Penn Blue - Mantido um azul escuro para o logo */
-
-    /* Suas fontes escolhidas (mantidas): */
-    --fonte-titulos: 'Poppins', sans-serif;
+    --cor-principal: #8B4513; /* Um tom de marrom sela, para um ar clássico */
+    --cor-fundo: #fdfaf6;
+    --cor-texto: #333333;
+    --fonte-titulo: 'Playfair Display', serif;
     --fonte-corpo: 'Nunito Sans', sans-serif;
+    --fonte-destaque: 'Poppins', sans-serif;
 }
 
-/* ---- RESET E ESTILOS GERAIS ---- */
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +19,7 @@
 body {
     font-family: var(--fonte-corpo);
     background-color: var(--cor-fundo);
-    color: var(--cor-texto); /* Texto principal agora é azul escuro */
+    color: var(--cor-texto);
     line-height: 1.6;
 }
 
@@ -38,231 +29,186 @@ body {
     padding: 0 20px;
 }
 
-h1, h2, h3 {
-    font-family: var(--fonte-titulos);
-    color: var(--cor-primaria); /* Cor dos títulos (h2, h3) */
-    margin-bottom: 15px;
+a {
+    text-decoration: none;
+    color: var(--cor-principal);
 }
 
-h3 {
-    color: var(--cor-texto); /* Títulos dos cards em azul escuro */
+ul {
+    list-style: none;
 }
 
-section {
-    padding: 60px 0;
-    text-align: center;
-}
-
-/* ---- CABEÇALHO E NAVEGAÇÃO (COM O NOVO BANNER!) ---- */
+/* ============================================= */
+/* CABEÇALHO E NAVEGAÇÃO                         */
+/* ============================================= */
 header {
-    /* Aplicando sua nova imagem de fundo */
-    background-image: url('CLUBE DOS LIVROS/IMAGENS/LOGO\ 1.0.png');
-    background-size: cover; /* Garante que a imagem cubra todo o espaço */
-    background-position: center; /* Centraliza a imagem */
-    padding: 0; /* Removemos o padding para a imagem preencher tudo */
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 15px 0;
     position: sticky;
     top: 0;
-    z-index: 100;
-    height: 100px; /* Definindo uma altura fixa para o banner */
+    z-index: 1000;
 }
 
-header .container {
+header nav {
     display: flex;
-    justify-content: flex-end; /* Joga os links do menu para a DIREITA */
+    justify-content: space-between;
     align-items: center;
-    height: 100%; /* Garante que o container ocupe toda a altura do header */
 }
 
-nav ul {
-    list-style: none;
+header .logo {
+    font-family: var(--fonte-titulo);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header nav ul {
     display: flex;
+    align-items: center;
     gap: 25px;
 }
 
-nav a {
-    text-decoration: none;
-    color: #3E2723; /* Um marrom escuro para combinar com o banner */
-    font-weight: 600;
-    font-size: 1.1em; /* Aumentei um pouco a fonte para ler melhor */
-    transition: color 0.3s;
+header nav ul li a {
+    font-family: var(--fonte-destaque);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--cor-secundaria); /* Mantém o azul cerúleo ao passar o mouse */
-}
-
-
-/* ---- BOTÃO DE CHAMADA (CTA) ---- */
-.cta-button, .cta-button-nav {
-    display: inline-block;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-branca); /* Texto do botão branco para ler no fundo azul */
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover, .cta-button-nav:hover {
-    background-color: #0e6a87; /* Tom mais escuro do azul para o hover */
+header nav ul li a:hover {
+    color: #5a2d0c;
 }
 
 .cta-button-nav {
-    padding: 8px 15px;
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
-/* ---- SEÇÃO HERO (LIVRO DO MÊS) ---- */
-.hero {
-    background-color: var(--cor-branca); /* Fundo da seção principal branco */
+.cta-button-nav:hover {
+    background-color: #5a2d0c;
+    color: white;
 }
 
-.hero .container {
+/* ============================================= */
+/* SEÇÃO PRINCIPAL (HERO)                        */
+/* ============================================= */
+#hero-principal {
+    height: 85vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    gap: 40px;
+    text-align: center;
+    color: white; /* Cor do texto sobre a imagem */
+
+    /* --- IMAGEM DE FUNDO --- */
+    /* !!! ATENÇÃO: COLOQUE O CAMINHO CORRETO DA SUA IMAGEM AQUI !!! */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('CLUBE DOS LIVROS/IMAGENS/imagem\ de\ fundo.png');
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-.hero-content {
-    max-width: 60%;
+.hero-container {
+    max-width: 800px;
 }
 
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 5px;
-    color: var(--cor-texto); /* Título do livro em azul escuro */
-}
-
-.hero-image img {
-    max-width: 300px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra cinza sutil */
-}
-
-/* ---- SEÇÃO LIVROS ANTERIORES ---- */
-.galeria-livros {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-    flex-wrap: wrap; 
-}
-
-.card-livro {
-    background-color: var(--cor-branca);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra cinza */
-    width: 220px;
-    transition: all 0.3s ease-in-out;
-}
-
-.card-livro:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(137, 194, 217, 0.6); /* Sombra no seu tom de azul */
-}
-
-.card-livro img {
-    max-width: 100%;
-    border-radius: 4px;
+.hero-subtitulo {
+    font-family: var(--fonte-destaque);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     margin-bottom: 15px;
 }
 
-/* ---- NOVA SEÇÃO: VOTAÇÃO ---- */
-#votacao {
-    background-color: transparent; /* Fundo transparente para mesclar com o body */
+#hero-principal h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
-.subtitulo {
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    font-size: 1.1em;
+.cta-button-dark {
+    background-color: var(--cor-fundo);
+    color: var(--cor-principal);
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-family: var(--fonte-destaque);
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-.galeria-votacao {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+.cta-button-dark:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.card-votacao {
-    background-color: var(--cor-branca);
-    padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-    border: 1px solid var(--cor-primaria);
-    transition: all 0.3s ease-in-out;
-}
-
-.card-votacao:hover {
-    transform: scale(1.05);
-    border-color: var(--cor-secundaria);
-}
-
-.vote-button {
-    background-color: transparent;
-    color: var(--cor-secundaria);
-    border: 2px solid var(--cor-secundaria);
-}
-
-.vote-button:hover {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-branca);
-}
-
-/* ---- RODAPÉ ---- */
+/* ============================================= */
+/* RODAPÉ                                        */
+/* ============================================= */
 footer {
-    background-color: var(--cor-primaria); /* Rodapé com o seu azul mais forte */
-    color: var(--cor-branca);
     text-align: center;
     padding: 20px 0;
+    background-color: #f1ebe5;
     margin-top: 40px;
 }
 
-/* ---- ESTILOS DO POP-UP (MODAL) ---- */
+
+/* ============================================= */
+/* POP-UP (MODAL)                                */
+/* ============================================= */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(10, 17, 40, 0.7);
-    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Começa escondido */
     justify-content: center;
     align-items: center;
-    z-index: 200;
+    z-index: 2000;
 }
 
-.modal-show {
+/* Classe que o JavaScript adiciona para mostrar o modal */
+.modal-overlay.modal-show {
     display: flex;
 }
 
 .modal-content {
-    background-color: var(--cor-branca);
+    background-color: white;
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
     width: 90%;
     max-width: 500px;
-    position: relative;
     text-align: center;
+    position: relative;
 }
 
 .modal-close {
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 2em;
+    font-size: 28px;
+    font-weight: bold;
     color: #aaa;
     cursor: pointer;
-    transition: color 0.3s;
 }
 
 .modal-close:hover {
-    color: var(--cor-texto);
+    color: #333;
+}
+
+.modal-content h2 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: 10px;
 }
 
 .modal-form {
@@ -274,13 +220,23 @@ footer {
 
 .modal-form input {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-family: var(--fonte-corpo);
-    font-size: 1em;
 }
 
-.modal-form button {
+.cta-button {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 12px;
     border: none;
+    border-radius: 5px;
+    font-family: var(--fonte-destaque);
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #5a2d0c;
 }

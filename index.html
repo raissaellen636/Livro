@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube do Livro Virtual</title>
+    <title>Clube de Literatura Clássica</title>
+    
     <link rel="stylesheet" href="livros.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="container">
             <nav>
+                <a href="#" class="logo">Clube Clássico</a>
                 <ul>
-                    <li><a href="#livro-mes">Livro do Mês</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#anteriores">Leituras Passadas</a></li>
+                    <li><a href="principal/livro-do-mes.html">Livro do Mês</a></li>
+                    <li><a href="principal/sobre-o-clube.html">Sobre</a></li>
+                    <li><a href="principal/leituras.html">Leituras Passadas</a></li>
                     <li><a href="#" class="cta-button-nav js-open-modal">Participe</a></li>
                 </ul>
             </nav>
@@ -23,83 +29,60 @@
     </header>
 
     <main>
-        <section id="livro-mes" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2>Nossa leitura de Outubro</h2>
-                    <h1>O Quinze</h1>
-                    <p class="autor">por Rachel de Queiroz</p>
-                    <p class="resumo">Um romance que retrata a luta do povo nordestino durante a grande seca de 1915, explorando temas de amor, família e sobrevivência.</p>
-                    <a href="#" class="cta-button js-open-modal">Junte-se à discussão!</a>
-                </div>
-                <div class="hero-image">
-                    <img src="https://via.placeholder.com/300x450" alt="Capa do livro O Quinze">
-                </div>
-            </div>
-        </section>
+        <section id="hero-principal">
+            <div class="container hero-container">
+                <div class="hero-texto">
+                    <p class="hero-subtitulo">CLUBE DOS LIVROS</p>
+                    <h1>Venha fazer parte do nosso clube.</h1>
+                    <a href="#" class="cta-button-dark js-open-modal">participe</a>
+                    <section id="tabela-leituras">
+    <div class="container">
+        <h2 class="titulo-secao">Resumo em Tabela</h2>
+        <p class="subtitulo-secao">Relembre os clássicos que já exploramos em nosso clube.</p>
 
-        <section id="sobre">
-            <div class="container">
-                <h2>O que é o nosso clube?</h2>
-                <p>Somos um grupo de apaixonados por leitura que se reúne mensalmente para explorar novos mundos, debater ideias e compartilhar o amor pelos livros. A cada mês, uma nova jornada literária!</p>
-            </div>
-        </section>
+        <table class="tabela-livros">
+            <thead>
+                <tr>
+                    <th>Capa</th>
+                    <th>Título</th>
+                    <th>Autor(a)</th>
+                    <th>Mês da Leitura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="CLUBE DOS LIVROS/IMAGENS/dom casmurro.png" alt="Capa do livro Dom Casmurro">
+                    </td>
+                    <td data-label="Título">Dom Casmurro</td>
+                    <td data-label="Autor(a)">Machado de Assis</td>
+                    <td data-label="Mês da Leitura">Julho / 2025</td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <img src="CLUBE DOS LIVROS/IMAGENS/" alt="Capa do livro Orgulho e Preconceito">
+                    </td>
+                    <td data-label="Título">Orgulho e Preconceito</td>
+                    <td data-label="Autor(a)">Jane Austen</td>
+                    <td data-label="Mês da Leitura">Agosto / 2025</td>
+                </tr>
 
-        <section id="anteriores">
-            <div class="container">
-                <h2>Nossas leituras passadas</h2>
-                <div class="galeria-livros">
-                    <div class="card-livro">
-                        <img src="https://via.placeholder.com/200x300" alt="Capa Livro Anterior 1">
-                        <h3>Dom Casmurro</h3>
-                        <p>Machado de Assis</p>
-                    </div>
-                    <div class="card-livro">
-                        <img src="https://via.placeholder.com/200x300" alt="Capa Livro Anterior 2">
-                        <h3>A Hora da Estrela</h3>
-                        <p>Clarice Lispector</p>
-                    </div>
-                    <div class="card-livro">
-                        <img src="https://via.placeholder.com/200x300" alt="Capa Livro Anterior 3">
-                        <h3>Vidas Secas</h3>
-                        <p>Graciliano Ramos</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <tr>
+                    <td>
+                        <img src="caminho/para/capa-o-morro.jpg" alt="Capa do livro O Morro dos Ventos Uivantes">
+                    </td>
+                    <td data-label="Título">O Morro dos Ventos Uivantes</td>
+                    <td data-label="Autor(a)">Emily Brontë</td>
+                    <td data-label="Mês da Leitura">Setembro / 2025</td>
+                </tr>
 
-        <section id="votacao">
-            <div class="container">
-                <h2>Vote na Próxima Leitura!</h2>
-                <p class="subtitulo">Ajude a escolher o livro que exploraremos no próximo mês. A votação está aberta!</p>
-                <div class="galeria-votacao">
-                    <div class="card-votacao">
-                        <img src="https://via.placeholder.com/200x300" alt="Capa Livro Candidato 1">
-                        <h3>O Avesso da Pele</h3>
-                        <p>Jeferson Tenório</p>
-                        <a href="#" class="vote-button">Votar neste</a>
-                    </div>
-                    <div class="card-votacao">
-                        <img src="https://via.placeholder.com/200x300" alt="Capa Livro Candidato 2">
-                        <h3>Torto Arado</h3>
-                        <p>Itamar Vieira Junior</p>
-                        <a href="#" class="vote-button">Votar neste</a>
-                    </div>
-                    <div class="card-votacao">
-                        <img src="https://via.placeholder.com/200x300" alt="Capa Livro Candidato 3">
-                        <h3>Hibisco Roxo</h3>
-                        <p>Chimamanda N. Adichie</p>
-                        <a href="#" class="vote-button">Votar neste</a>
-                    </div>
+                </tbody>
+        </table>
+    </div>
+</section>
                 </div>
-            </div>
-        </section>
-        <section id="participe">
-            <div class="container">
-                <h2>Gostou? Participe!</h2>
-                <p>É fácil e gratuito. Basta se inscrever para receber os links de discussão e participar das nossas votações para os próximos livros.</p>
-                <a href="#" class="cta-button js-open-modal">Quero me inscrever agora!</a>
-            </div>
+                </div>
         </section>
     </main>
 
@@ -113,42 +96,35 @@
         <div class="modal-content">
             <span class="modal-close">&times;</span>
             <h2>Bem-vindo(a) ao Clube!</h2>
-            <p>Para participar das nossas discussões e votações, basta preencher seu nome e e-mail abaixo. Você receberá o link para o nosso grupo exclusivo!</p>
-            
+            <p>Para participar, preencha seu nome e e-mail abaixo.</p>
             <form class="modal-form">
-                <input type="text" placeholder="Seu nome completo">
-                <input type="email" placeholder="Seu melhor e-mail">
+                <input type="text" placeholder="Seu nome completo" required>
+                <input type="email" placeholder="Seu melhor e-mail" required>
                 <button type="submit" class="cta-button">Entrar para o clube</button>
             </form>
         </div>
     </div>
 
     <script>
-        // 1. Pegar os elementos que vamos usar
-        const openModalBtns = document.querySelectorAll('.js-open-modal'); 
+        const openModalBtns = document.querySelectorAll('.js-open-modal');
         const modalOverlay = document.getElementById('modal-overlay');
         const closeModalBtn = document.querySelector('.modal-close');
 
-        // 2. Função para abrir o modal
-        function abrirModal() {
+        function abrirModal(event) {
+            event.preventDefault(); 
             modalOverlay.classList.add('modal-show');
         }
 
-        // 3. Função para fechar o modal
         function fecharModal() {
             modalOverlay.classList.remove('modal-show');
         }
 
-        // 4. Dizer ao navegador o que fazer quando clicamos
-        // Passa por CADA botão e adiciona o "ouvinte" de clique
         openModalBtns.forEach(function(btn) {
             btn.addEventListener('click', abrirModal);
         });
 
-        // Clicar no 'X' -> Fecha o modal
         closeModalBtn.addEventListener('click', fecharModal);
 
-        // Clicar fora da caixa branca (no fundo escuro) -> Fecha o modal
         modalOverlay.addEventListener('click', function(event) {
             if (event.target === modalOverlay) {
                 fecharModal();
